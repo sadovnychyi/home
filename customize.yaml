@@ -1,0 +1,72 @@
+binary_sensor.cube_158d000231e4b8:
+  friendly_name: Magic Cube
+  icon: mdi:cube-outline
+binary_sensor.door_window_sensor_158d0001830feb:
+  friendly_name: Bathroom Door
+  icon: mdi:door
+binary_sensor.door_window_sensor_158d0002b6e9f4:
+  friendly_name: Front Door
+  icon: mdi:door
+binary_sensor.motion_sensor_158d000122955e:
+  friendly_name: Motion
+  icon: mdi:motion-sensor
+binary_sensor.switch_158d0001839fab:
+  friendly_name: Front Door Switch
+  icon: mdi:light-switch
+binary_sensor.switch_158d000210a4fb:
+  friendly_name: Bed Switch
+  icon: mdi:light-switch
+binary_sensor.vibration_158d0002a628ae:
+  friendly_name: Vibration
+  icon: mdi:vibrate
+sensor.bed_activity_158d0002a628ae:
+  friendly_name: Vibration Activity
+  icon: mdi:vibrate
+sensor.tilt_angle_158d0002a628ae:
+  friendly_name: Vibration Tilt Angle
+  icon: mdi:vibrate
+sensor.coordination_158d0002a628ae:
+  friendly_name: Vibration Coordination
+  icon: mdi:vibrate
+fan.air_purifier:
+  friendly_name: Air Purifier
+  icon: mdi:air-purifier
+light.gateway_light_34ce0088f666:
+  friendly_name: Gateway Light
+  icon: mdi:lightbulb-outline
+sensor.illumination_34ce0088f666:
+  friendly_name: Gateway Illumination
+  icon: mdi:lightbulb-on
+switch.plug_158d0001640e49:
+  friendly_name: Bathroom Vent
+  icon: mdi:fan
+sensor.tl_wr941hp_bytes_received:
+  friendly_name: Network bytes received
+  icon: mdi:server-network
+sensor.tl_wr941hp_bytes_sent:
+  friendly_name: Network bytes sent
+  icon: mdi:server-network
+sensor.tl_wr941hp_kbyte_sec_received:
+  friendly_name: Network kbyte/sec received
+  icon: mdi:server-network
+sensor.tl_wr941hp_kbyte_sec_sent:
+  friendly_name: Network kbyte/sec sent
+  icon: mdi:server-network
+sensor.tl_wr941hp_packets_received:
+  friendly_name: Network packets received
+  icon: mdi:server-network
+  hidden: true
+sensor.tl_wr941hp_packets_sec_received:
+  friendly_name: Network packets/sec received
+  icon: mdi:server-network
+  hidden: true
+sensor.tl_wr941hp_packets_sec_sent:
+  friendly_name: Network packets/sec sent
+  icon: mdi:server-network
+  hidden: true
+sensor.tl_wr941hp_packets_sent:
+  friendly_name: Network packets sent
+  icon: mdi:server-network
+  hidden: true
+binary_sensor.updater:
+  hidden: true

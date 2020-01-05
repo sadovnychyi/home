@@ -1,0 +1,224 @@
+ac_off:
+  sequence:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_61'
+      data:
+        command:
+          - 'ac_off'
+ac_auto_30:
+  sequence:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_61'
+      data:
+        command:
+          - 'ac_auto_30'
+ac_auto_29:
+  sequence:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_61'
+      data:
+        command:
+          - 'ac_auto_29'
+ac_auto_28:
+  sequence:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_61'
+      data:
+        command:
+          - 'ac_auto_28'
+ac_auto_27:
+  sequence:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_61'
+      data:
+        command:
+          - 'ac_auto_27'
+ac_auto_26:
+  sequence:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_61'
+      data:
+        command:
+          - 'ac_auto_26'
+ac_auto_25:
+  sequence:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_61'
+      data:
+        command:
+          - 'ac_auto_25'
+ac_auto_24:
+  sequence:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_61'
+      data:
+        command:
+          - 'ac_auto_24'
+ac_auto_23:
+  sequence:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_61'
+      data:
+        command:
+          - 'ac_auto_23'
+ac_auto_22:
+  sequence:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_61'
+      data:
+        command:
+          - 'ac_auto_22'
+ac_auto_21:
+  sequence:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_61'
+      data:
+        command:
+          - 'ac_auto_21'
+ac_auto_20:
+  sequence:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_61'
+      data:
+        command:
+          - 'ac_auto_20'
+ac_auto_19:
+  sequence:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_61'
+      data:
+        command:
+          - 'ac_auto_19'
+ac_auto_18:
+  sequence:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_61'
+      data:
+        command:
+          - 'ac_auto_18'
+ac_auto_17:
+  sequence:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_61'
+      data:
+        command:
+          - 'ac_auto_17'
+ac_auto_16:
+  sequence:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_61'
+      data:
+        command:
+          - 'ac_auto_16'
+ac_turbo_16:
+  sequence:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_61'
+      data:
+        command:
+          - 'ac_turbo_16'
+tv_power:
+  sequence:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_61'
+      data:
+        command:
+          - 'tv_power'
+tv_input:
+  sequence:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_61'
+      data:
+        command:
+          - 'tv_input'
+tv_volume_up:
+  sequence:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_61'
+      data:
+        command:
+          - 'tv_volume_up'
+tv_volume_down:
+  sequence:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_61'
+      data:
+        command:
+          - 'tv_volume_down'
+tv_mute:
+  sequence:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_61'
+      data:
+        command:
+          - 'tv_mute'
+tv_channel_next:
+  sequence:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_61'
+      data:
+        command:
+          - 'tv_channel_next'
+tv_channel_prev:
+  sequence:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_61'
+      data:
+        command:
+          - 'tv_channel_prev'
+tv_menu:
+  sequence:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_61'
+      data:
+        command:
+          - 'tv_menu'
+tv_enter:
+  sequence:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_61'
+      data:
+        command:
+          - 'tv_enter'
+tv_arrow_up:
+  sequence:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_61'
+      data:
+        command:
+          - 'tv_arrow_up'
+tv_arrow_down:
+  sequence:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_61'
+      data:
+        command:
+          - 'tv_arrow_down'
+tv_arrow_left:
+  sequence:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_61'
+      data:
+        command:
+          - 'tv_arrow_left'
+tv_arrow_right:
+  sequence:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_61'
+      data:
+        command:
+          - 'tv_arrow_right'
+tv_return:
+  sequence:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_61'
+      data:
+        command:
+          - 'tv_return'
+tv_exit:
+  sequence:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_61'
+      data:
+        command:
+          - 'tv_exit'

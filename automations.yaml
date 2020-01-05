@@ -1,0 +1,21 @@
+- alias: 'Set theme at startup'
+  hide_entity: true
+  trigger:
+   - platform: homeassistant
+     event: start
+  action:
+    service: frontend.set_theme
+    data:
+      name: material_dark_red
+
+- alias: Update Available Notification
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.updater
+      from: 'off'
+      to: 'on'
+  action:
+    - service: notify.notify
+      data_template:
+        message: "Home Assistant {{ state_attr('binary_sensor.updater', 'newest_version') }} is available."
