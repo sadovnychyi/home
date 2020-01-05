@@ -1,0 +1,27 @@
+steps:
+
+- id: 'pre-commit'
+  name: gcr.io/cloud-builders/gcloud-slim
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+    add-apt-repository -y ppa:deadsnakes/ppa
+    curl -sL https://deb.nodesource.com/setup_10.x | bash -
+    apt-get -y install \
+      python3.7 python3.7-venv python3.7-distutils python3.7-dev \
+      build-essential
+    # python3.7-dev
+    # ripgrep
+    curl -LO https://github.com/BurntSushi/ripgrep/releases/download/11.0.1/ripgrep_11.0.1_amd64.deb
+    dpkg -i ripgrep_11.0.1_amd64.deb
+    # we are not in a git repo (cloud build limitation)
+    # list all not ignored files and check them
+    git init
+    python3.7 -m ensurepip --default-pip
+    python3.7 -m pip install \
+      pre-commit \
+      homeassistant \
+      netdisco # https://github.com/home-assistant/home-assistant/issues/29866
+    hass --script check_config --config .
+    rg --files | xargs pre-commit run --hook-stage=manual --files
