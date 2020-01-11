@@ -163,3 +163,9 @@ remote:
     commands: !include ir_commands.yaml
 
 # TODO: climate control, e.g. https://github.com/Anonym-tsk/homeassistant-climate-xiaomi-remote
+
+geo_location:
+  - platform: usgs_earthquakes_feed
+    feed_type: 'past_month_m25_earthquakes'
+    radius: 150
+    minimum_magnitude: 2.5
