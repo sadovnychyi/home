@@ -1,0 +1,6 @@
+automations:
+  view: yes
+  name: Automations
+  icon: mdi:settings
+  entities:
+    - group.all_automations
