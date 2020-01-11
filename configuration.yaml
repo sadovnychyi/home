@@ -69,6 +69,13 @@ sensor:
         friendly_name: "AQI"
         unit_of_measurement: 'aqi'
         value_template: "{{ state_attr('fan.air_purifier', 'aqi') }}"
+  - platform: mold_indicator
+    indoor_temp_sensor: sensor.temperature
+    indoor_humidity_sensor: sensor.humidity
+    outdoor_temp_sensor: sensor.temperature_outside
+    # calibration_factor = (temp_indoor - temp_outdoor) / (temp_criticalpoint - temp_outdoor)
+    # where critical point is the coldest surface in the room
+    calibration_factor: 2.0
 
 history_graph:
   gr1:
