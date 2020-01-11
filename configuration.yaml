@@ -38,6 +38,25 @@ tts:
 frontend:
   themes: !include_dir_named themes
 
+google_assistant:
+  project_id: sadovnychyi
+  service_account: !include sadovnychyi-2453d143a173.json
+  report_state: true
+  # exposed_domains:
+  #   - switch
+  #   - light
+  # entity_config:
+  #   switch.kitchen:
+  #     name: CUSTOM_NAME_FOR_GOOGLE_ASSISTANT
+  #     aliases:
+  #       - BRIGHT_LIGHTS
+  #       - ENTRY_LIGHTS
+  #   light.living_room:
+  #     expose: false
+  #     room: LIVING_ROOM
+  #   group.all_automations:
+  #     expose: false
+
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
