@@ -49,24 +49,24 @@ recorder:
 sensor:
   - platform: template
     sensors:
-      outside_temperature:
+      temperature_outside:
         friendly_name: "Outside Temperature"
-        unit_of_measurement: 'degrees'
+        unit_of_measurement: '°C'
         value_template: "{{ state_attr('weather.home', 'temperature') }}"
-      home_temperature:
-        friendly_name: "Home Temperature"
-        unit_of_measurement: 'degrees'
+      temperature:
+        friendly_name: "Temperature"
+        unit_of_measurement: '°C'
         value_template: "{{ state_attr('fan.air_purifier', 'temperature') }}"
-      outside_humidity:
+      humidity_outside:
         friendly_name: "Outside Humidity"
         unit_of_measurement: '%'
         value_template: "{{ state_attr('weather.home', 'humidity') }}"
-      home_humidity:
-        friendly_name: "Home Humidity"
+      humidity:
+        friendly_name: "Humidity"
         unit_of_measurement: '%'
         value_template: "{{ state_attr('fan.air_purifier', 'humidity') }}"
-      home_aqi:
-        friendly_name: "Home AQI"
+      aqi:
+        friendly_name: "AQI"
         unit_of_measurement: 'aqi'
         value_template: "{{ state_attr('fan.air_purifier', 'aqi') }}"
 
@@ -74,15 +74,15 @@ history_graph:
   gr1:
     name: Temperature
     entities:
-      - sensor.outside_temperature
-      - sensor.home_temperature
+      - sensor.temperature_outside
+      - sensor.temperature
     hours_to_show: 24
     refresh: 60
   gr2:
     name: Humidity
     entities:
-      - sensor.outside_humidity
-      - sensor.home_humidity
+      - sensor.humidity_outside
+      - sensor.humidity
     hours_to_show: 24
     refresh: 60
 
