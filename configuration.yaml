@@ -1,3 +1,5 @@
+default_config:
+
 homeassistant:
   name: Home
   unit_system: metric
@@ -13,14 +15,22 @@ homeassistant:
         - 192.168.0.0/24
         - fd00::/8
         - 127.0.0.1
+        - ::1
       allow_bypass_login: true
   customize: !include customize.yaml
 
-default_config:
-
-# TODO: setup DNS after raspberry arrives
-# http:
-#   base_url: home.dmit.ro
+http:
+  base_url: https://home.dmit.ro
+  server_port: 8123
+  cors_allowed_origins:
+    - https://home.dmit.ro
+    - http://home.dmit.ro
+    - http://home.local
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 35.225.6.194
+    - 127.0.0.1
+    - ::1
 
 tts:
   - platform: google_translate
