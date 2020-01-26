@@ -2,7 +2,6 @@ default_config:
 
 homeassistant:
   name: Home
-  unit_system: metric
   latitude: !secret latitude
   longitude: !secret longitude
   elevation: 22
