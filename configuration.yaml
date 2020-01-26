@@ -58,8 +58,8 @@ google_assistant:
   #     expose: false
 
 group: !include groups.yaml
-automation: !include automations.yaml
 script: !include scripts.yaml
+automation: !include automations.yaml
 scene: !include scenes.yaml
 
 recorder:
