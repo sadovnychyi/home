@@ -1,3 +1,17 @@
+ap_auto:
+  sequence:
+    - service: fan.set_speed
+      entity_id: fan.air_purifier
+      speed: Auto
+ap_max:
+  sequence:
+    - service: xiaomi_miio.fan_set_favorite_level
+      entity_id: fan.air_purifier
+      level: 14
+    - service: fan.set_speed
+      entity_id: fan.air_purifier
+      speed: Favorite
+
 ac_off:
   sequence:
     - service: remote.send_command
