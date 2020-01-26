@@ -40,7 +40,8 @@ frontend:
 google_assistant:
   project_id: sadovnychyi
   service_account: !include sadovnychyi-2453d143a173.json
-  report_state: true
+  # TODO: broken
+  # report_state: true
   # exposed_domains:
   #   - switch
   #   - light
