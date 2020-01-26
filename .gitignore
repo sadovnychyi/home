@@ -2,7 +2,6 @@
 .storage
 deps
 tts
-secrets.yaml
 *.log
 *.db*
 *.DS_Store
