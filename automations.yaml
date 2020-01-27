@@ -1,37 +1,27 @@
-- alias: 'AQI high'
+- alias: 'AQI control (hazardous)'
   hide_entity: true
   trigger:
     platform: numeric_state
     entity_id:
       - sensor.aqi
-    above: 24
+    above: 25
+    for: "00:10:00"
   action:
     - service: tts.google_translate_say
       entity_id: media_player.living_room_speaker
       data:
         message: 'Hazardous atmospheric conditions detected'
-    - service: script.ap_max
+    - service: script.ap_detect
 
-- alias: 'AQI medium'
+- alias: 'AQI control'
   hide_entity: true
   trigger:
     platform: numeric_state
     entity_id:
       - sensor.aqi
-    below: 25
-    above: 6
+    above: 1
   action:
-    - service: script.ap_medium
-
-- alias: 'AQI normal'
-  hide_entity: true
-  trigger:
-    platform: numeric_state
-    entity_id:
-      - sensor.aqi
-    below: 7
-  action:
-    - service: script.ap_auto
+    - service: script.ap_detect
 
 - alias: 'Set theme at startup'
   hide_entity: true

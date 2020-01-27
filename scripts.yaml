@@ -4,6 +4,18 @@ ap_auto:
       entity_id: fan.air_purifier
       data:
         speed: Auto
+ap_detect:
+  sequence:
+    - service: xiaomi_miio.fan_set_favorite_level
+      entity_id: fan.air_purifier
+      data_template:
+        level: "{{ [[(states('sensor.aqi') | int / 2) | int, 1] | max, 14] | min }}"
+    - service: fan.set_speed
+      entity_id: fan.air_purifier
+      data:
+        speed: Favorite
+    - delay:
+        minutes: 1
 ap_medium:
   sequence:
     - service: xiaomi_miio.fan_set_favorite_level
