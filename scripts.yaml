@@ -14,8 +14,6 @@ ap_detect:
       entity_id: fan.air_purifier
       data:
         speed: Favorite
-    - delay:
-        minutes: 1
 ap_medium:
   sequence:
     - service: xiaomi_miio.fan_set_favorite_level
