@@ -102,7 +102,6 @@
         brightness_step_pct: "{{ trigger.event.data.action_value }}"
 
 - alias: 'AQI warning'
-  hide_entity: true
   trigger:
     platform: numeric_state
     entity_id:
@@ -116,15 +115,23 @@
         message: 'Hazardous atmospheric conditions detected'
 
 - alias: 'AQI control'
-  hide_entity: false
   trigger:
     platform: time_pattern
     minutes: '/1'
   action:
     - service: script.ap_detect
 
+- alias: Notify when door is opened
+  trigger:
+    platform: state
+    entity_id: binary_sensor.door_window_sensor_158d0002b6e9f4
+    to: 'on'
+  action:
+    - service: notify.notify_person
+      data:
+        message: 'The door has been opened'
+
 - alias: 'Set theme at startup'
-  hide_entity: true
   trigger:
    - platform: homeassistant
      event: start
@@ -134,7 +141,6 @@
       name: material_dark_red
 
 - alias: Update Available Notification
-  hide_entity: true
   trigger:
     - platform: state
       entity_id: binary_sensor.updater
