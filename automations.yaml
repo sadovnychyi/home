@@ -12,7 +12,7 @@
         click_type: single
   action:
     service: light.toggle
-    entity_id: group.all_lights
+    entity_id: all
 
 - alias: Turn off lights via switch
   trigger:
@@ -28,7 +28,7 @@
         click_type: long_click_press
   action:
     service: light.turn_off
-    entity_id: group.all_lights
+    entity_id: all
 
 - alias: Turn off AC via front door switch
   trigger:
@@ -87,6 +87,19 @@
   action:
     - service: switch.turn_off
       entity_id: group.bathroom_vent
+
+- alias: Xiaomi Cube - Brightness [Rotate]
+  trigger:
+    - platform: event
+      event_type: xiaomi_aqara.cube_action
+      event_data:
+        entity_id: binary_sensor.cube_158d000231e4b8
+        action_type: rotate
+  action:
+    - service: light.turn_on
+      entity_id: all
+      data_template:
+        brightness_step_pct: "{{ trigger.event.data.action_value }}"
 
 - alias: 'AQI warning'
   hide_entity: true
