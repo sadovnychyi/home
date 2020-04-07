@@ -68,7 +68,25 @@
       data:
         transition: 60
 
-# TODO: bathroom fan
+- alias: Turn on bathroom vent
+  trigger:
+    platform: state
+    entity_id: binary_sensor.door_window_sensor_158d0001830feb
+    to: 'on'
+  action:
+    service: switch.turn_on
+    entity_id: group.bathroom_vent
+
+- alias: Turn off bathroom vent
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.door_window_sensor_158d0001830feb
+      to: 'off'
+      for:
+        minutes: 10
+  action:
+    - service: switch.turn_off
+      entity_id: group.bathroom_vent
 
 - alias: 'AQI warning'
   hide_entity: true

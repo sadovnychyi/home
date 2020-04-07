@@ -11,3 +11,9 @@ night_lights:
   entities:
     - light.gateway_light_34ce0088f666
     - light.under_bed
+
+bathroom_vent:
+  view: no
+  name: Bathroom Vent
+  entities:
+    - switch.plug_158d0001640e49
