@@ -154,6 +154,7 @@ ac_turbo_16:
       data:
         command:
           - 'ac_turbo_16'
+
 tv_power:
   sequence:
     - service: remote.send_command

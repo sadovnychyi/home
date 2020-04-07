@@ -13,7 +13,7 @@
         message: 'Hazardous atmospheric conditions detected'
 
 - alias: 'AQI control'
-  hide_entity: true
+  hide_entity: false
   trigger:
     platform: time_pattern
     minutes: '/1'
