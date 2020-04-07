@@ -1,0 +1,32 @@
+title: Climate Control
+views:
+  - title: Climate Control
+    path: climate
+    icon: mdi:coolant-temperature
+    badges:
+      - sensor.temperature_outside
+      - sensor.temperature
+      - sensor.humidity_outside
+      - sensor.humidity
+    cards:
+      - type: history-graph
+        title: "Temperature"
+        hours_to_show: 24
+        refresh: 60
+        entities:
+          - sensor.temperature_outside
+          - sensor.temperature
+      - type: sensor
+        name: Temperature
+        icon: mdi:coolant-temperature
+        hours_to_show: 24
+        graph: line
+        detail: 1
+        entity: sensor.temperature
+      - type: history-graph
+        title: "Humidity"
+        hours_to_show: 24
+        refresh: 60
+        entities:
+          - sensor.humidity_outside
+          - sensor.humidity

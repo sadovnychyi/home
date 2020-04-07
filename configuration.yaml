@@ -65,6 +65,16 @@ scene: !include scenes.yaml
 recorder:
   purge_keep_days: 365
 
+lovelace:
+  mode: storage
+  dashboards:
+    lovelace-yaml:
+      mode: yaml
+      title: Climate
+      icon: mdi:coolant-temperature
+      show_in_sidebar: true
+      filename: lovelace.yaml
+
 sensor:
   - platform: template
     sensors:
@@ -95,22 +105,6 @@ sensor:
     # calibration_factor = (temp_indoor - temp_outdoor) / (temp_criticalpoint - temp_outdoor)
     # where critical point is the coldest surface in the room
     calibration_factor: 2.0
-
-history_graph:
-  gr1:
-    name: Temperature
-    entities:
-      - sensor.temperature_outside
-      - sensor.temperature
-    hours_to_show: 24
-    refresh: 60
-  gr2:
-    name: Humidity
-    entities:
-      - sensor.humidity_outside
-      - sensor.humidity
-    hours_to_show: 24
-    refresh: 60
 
 discovery:
   ignore:
