@@ -175,7 +175,24 @@ remote:
     hidden: true
     commands: !include ir_commands.yaml
 
-# TODO: climate control, e.g. https://github.com/Anonym-tsk/homeassistant-climate-xiaomi-remote
+input_boolean:
+  ac:
+    name: "Air Conditioner"
+    initial: off
+
+climate:
+  - platform: generic_thermostat
+    name: Thermostat
+    heater: input_boolean.ac
+    target_sensor: sensor.temperature
+    min_cycle_duration: 300
+    min_temp: 25
+    max_temp: 30
+    ac_mode: true
+    target_temp: 27
+    cold_tolerance: 1
+    hot_tolerance: 1
+    precision: 1.0
 
 geo_location:
   - platform: usgs_earthquakes_feed

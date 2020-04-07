@@ -30,3 +30,5 @@ views:
         entities:
           - sensor.humidity_outside
           - sensor.humidity
+      - type: thermostat
+        entity: climate.thermostat

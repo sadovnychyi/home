@@ -121,6 +121,24 @@
   action:
     - service: script.ap_detect
 
+- alias: AC on
+  trigger:
+    platform: state
+    entity_id: input_boolean.ac
+    to: 'on'
+  action:
+    service: script.turn_on
+    entity_id: script.ac_auto_25
+
+- alias: AC off
+  trigger:
+    platform: state
+    entity_id: input_boolean.ac
+    to: 'off'
+  action:
+    service: script.turn_on
+    entity_id: script.ac_off
+
 - alias: Notify when door is opened
   trigger:
     platform: state
