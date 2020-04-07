@@ -4,3 +4,10 @@ automations:
   icon: mdi:settings
   entities:
     - group.all_automations
+
+night_lights:
+  view: yes
+  name: Night lights
+  entities:
+    - light.gateway_light_34ce0088f666
+    - light.under_bed

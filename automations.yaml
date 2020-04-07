@@ -1,3 +1,31 @@
+- alias: Turn on night lights on motion
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor_158d000122955e
+    to: 'on'
+  condition:
+    condition: numeric_state
+    entity_id: sensor.illumination_34ce0088f666
+    below: 500
+  action:
+    service: light.turn_on
+    entity_id: group.night_lights
+    data:
+      transition: 5
+
+- alias: Turn off night lights after motion
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_sensor_158d000122955e
+      to: 'off'
+      for:
+        seconds: 10
+  action:
+    - service: light.turn_off
+      entity_id: group.night_lights
+      data:
+        transition: 60
+
 - alias: 'AQI warning'
   hide_entity: true
   trigger:
