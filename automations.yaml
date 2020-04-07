@@ -1,3 +1,45 @@
+- alias: Toggle lights via switch
+  trigger:
+    - platform: event
+      event_type: xiaomi_aqara.click
+      event_data:
+        entity_id: binary_sensor.switch_158d0001839fab
+        click_type: single
+    - platform: event
+      event_type: xiaomi_aqara.click
+      event_data:
+        entity_id: binary_sensor.switch_158d000210a4fb
+        click_type: single
+  action:
+    service: light.toggle
+    entity_id: group.all_lights
+
+- alias: Turn off lights via switch
+  trigger:
+    - platform: event
+      event_type: xiaomi_aqara.click
+      event_data:
+        entity_id: binary_sensor.switch_158d0001839fab
+        click_type: long_click_press
+    - platform: event
+      event_type: xiaomi_aqara.click
+      event_data:
+        entity_id: binary_sensor.switch_158d000210a4fb
+        click_type: long_click_press
+  action:
+    service: light.turn_off
+    entity_id: group.all_lights
+
+- alias: Turn off AC via front door switch
+  trigger:
+    - platform: event
+      event_type: xiaomi_aqara.click
+      event_data:
+        entity_id: binary_sensor.switch_158d0001839fab
+        click_type: long_click_press
+  action:
+    service: script.ac_off
+
 - alias: Turn on night lights on motion
   trigger:
     platform: state
@@ -25,6 +67,8 @@
       entity_id: group.night_lights
       data:
         transition: 60
+
+# TODO: bathroom fan
 
 - alias: 'AQI warning'
   hide_entity: true
