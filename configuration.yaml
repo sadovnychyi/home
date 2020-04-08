@@ -190,9 +190,9 @@ climate:
     max_temp: 30
     ac_mode: true
     target_temp: 27
-    cold_tolerance: 0.3
-    hot_tolerance: 0.3
-    precision: 1.0
+    cold_tolerance: 0.5
+    hot_tolerance: 0.5
+    precision: 0.5
 
 geo_location:
   - platform: usgs_earthquakes_feed
