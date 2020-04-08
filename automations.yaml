@@ -70,9 +70,12 @@
 
 - alias: Turn on bathroom vent
   trigger:
-    platform: state
-    entity_id: binary_sensor.door_window_sensor_158d0001830feb
-    to: 'on'
+    - platform: state
+      entity_id: binary_sensor.door_window_sensor_158d0001830feb
+      to: 'on'
+    - platform: state
+      entity_id: binary_sensor.door_window_sensor_158d0001830feb
+      to: 'off'
   action:
     service: switch.turn_on
     entity_id: group.bathroom_vent
@@ -81,9 +84,14 @@
   trigger:
     - platform: state
       entity_id: binary_sensor.door_window_sensor_158d0001830feb
+      to: 'on'
+      for:
+        seconds: 10
+    - platform: state
+      entity_id: binary_sensor.door_window_sensor_158d0001830feb
       to: 'off'
       for:
-        minutes: 10
+        seconds: 10
   action:
     - service: switch.turn_off
       entity_id: group.bathroom_vent
