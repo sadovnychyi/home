@@ -190,8 +190,8 @@ climate:
     max_temp: 30
     ac_mode: true
     target_temp: 27
-    cold_tolerance: 1
-    hot_tolerance: 1
+    cold_tolerance: 0.3
+    hot_tolerance: 0.3
     precision: 1.0
 
 geo_location:
