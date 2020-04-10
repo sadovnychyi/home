@@ -38,7 +38,10 @@
         entity_id: binary_sensor.switch_158d0001839fab
         click_type: long_click_press
   action:
-    service: script.ac_off
+    - service: script.ac_off
+    # TODO: set away mode
+    - service: climate.turn_off
+      entity_id: climate.turn_off
 
 - alias: Turn on night lights on motion
   trigger:
@@ -136,7 +139,8 @@
     to: 'on'
   action:
     service: script.turn_on
-    entity_id: script.ac_auto_25
+    data_template:
+      entity_id: "script.ac_auto_{{ (state_attr('climate.thermostat', 'temperature')-1)|round }}"
 
 - alias: AC off
   trigger:
