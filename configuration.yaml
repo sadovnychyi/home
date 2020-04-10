@@ -185,8 +185,11 @@ climate:
     name: Thermostat
     heater: input_boolean.ac
     target_sensor: sensor.temperature
+    initial_hvac_mode: 'cool'
+    keep_alive:
+      hours: 3
     min_cycle_duration: 300
-    min_temp: 25
+    min_temp: 17
     max_temp: 30
     ac_mode: true
     target_temp: 27

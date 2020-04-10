@@ -151,6 +151,15 @@
     service: script.turn_on
     entity_id: script.ac_off
 
+- alias: 'Sync thermostat with AC'
+  trigger:
+    platform: template
+    value_template: "{{ state_attr('climate.thermostat', 'temperature') }}"
+  action:
+    service: script.turn_on
+    data_template:
+      entity_id: "script.ac_auto_{{ (state_attr('climate.thermostat', 'temperature')-1)|round }}"
+
 - alias: Notify when door is opened
   trigger:
     platform: state
