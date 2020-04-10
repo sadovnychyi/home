@@ -153,8 +153,8 @@
 
 - alias: 'Sync thermostat with AC'
   trigger:
-    platform: template
-    value_template: "{{ state_attr('climate.thermostat', 'temperature') }}"
+    platform: state
+    entity_id: sensor.target_temperature
   action:
     service: script.turn_on
     data_template:

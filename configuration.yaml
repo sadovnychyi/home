@@ -98,6 +98,9 @@ sensor:
         friendly_name: "AQI"
         unit_of_measurement: 'aqi'
         value_template: "{{ state_attr('fan.air_purifier', 'aqi') }}"
+      target_temperature:
+        value_template: "{{ state_attr('climate.thermostat', 'temperature') }}"
+        friendly_name: Target Temperature
   - platform: mold_indicator
     indoor_temp_sensor: sensor.temperature
     indoor_humidity_sensor: sensor.humidity
