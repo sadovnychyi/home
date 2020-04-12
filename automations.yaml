@@ -53,23 +53,51 @@
     entity_id: sensor.illumination_34ce0088f666
     below: 500
   action:
-    service: light.turn_on
-    entity_id: group.night_lights
-    data:
-      transition: 5
-
-- alias: Turn off night lights after motion
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.motion_sensor_158d000122955e
-      to: 'off'
-      for:
-        seconds: 10
-  action:
-    - service: light.turn_off
+    - service: light.turn_on
       entity_id: group.night_lights
       data:
-        transition: 60
+        transition: 10
+        brightness_pct: 100
+        color_name: red
+    - delay: 00:00:10
+    - service: light.turn_off
+      entity_id: light.under_bed
+      data:
+        transition: 80
+    - service: light.turn_on
+      entity_id: light.gateway_light_34ce0088f666
+      data:
+        brightness_pct: 96
+    - delay: 00:00:10
+    - service: light.turn_on
+      entity_id: light.gateway_light_34ce0088f666
+      data:
+        brightness_pct: 80
+    - delay: 00:00:10
+    - service: light.turn_on
+      entity_id: light.gateway_light_34ce0088f666
+      data:
+        brightness_pct: 64
+    - delay: 00:00:10
+    - service: light.turn_on
+      entity_id: light.gateway_light_34ce0088f666
+      data:
+        brightness_pct: 48
+    - delay: 00:00:10
+    - service: light.turn_on
+      entity_id: light.gateway_light_34ce0088f666
+      data:
+        brightness_pct: 32
+    - delay: 00:00:10
+    - service: light.turn_on
+      entity_id: light.gateway_light_34ce0088f666
+      data:
+        brightness_pct: 16
+    - delay: 00:00:10
+    - service: light.turn_on
+      entity_id: light.gateway_light_34ce0088f666
+      data:
+        brightness_pct: 0
 
 - alias: Turn on bathroom vent
   trigger:
