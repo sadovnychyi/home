@@ -158,6 +158,12 @@
   trigger:
     platform: state
     entity_id: sensor.target_temperature
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.ac
+        state: 'on'
   action:
     service: script.turn_on
     data_template:
