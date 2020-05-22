@@ -21,5 +21,17 @@
   * Yeelight Strip
   * Yeelight v2 8x
   * TP-Link router
-  * [Helmet](https://github.com/sadovnychyi/pi-helmet-cam) (integration TODO)
+  * [Helmet](https://github.com/sadovnychyi/pi-helmet-cam) (TODO)
   * PS4 (TODO)
+
+
+## Deploying new changes
+```bash
+make deploy
+```
+This will automatically `tail -f` new logs so we can spot issues.
+
+## Upgrading homeassistant version
+```bash
+make upgrade
+```
