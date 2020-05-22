@@ -143,7 +143,7 @@
   action:
     service: script.turn_on
     data_template:
-      entity_id: "script.ac_auto_{{ (state_attr('climate.thermostat', 'temperature')-1)|round }}"
+      entity_id: "script.ac_auto_{{ (state_attr('climate.thermostat', 'temperature'))|int }}"
 
 - alias: AC off
   trigger:
@@ -167,7 +167,7 @@
   action:
     service: script.turn_on
     data_template:
-      entity_id: "script.ac_auto_{{ (state_attr('climate.thermostat', 'temperature')-1)|round }}"
+      entity_id: "script.ac_auto_{{ (state_attr('climate.thermostat', 'temperature'))|int }}"
 
 - alias: Notify when door is opened
   trigger:
