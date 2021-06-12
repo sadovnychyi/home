@@ -3,7 +3,7 @@ ap_auto:
     - service: fan.set_preset_mode
       entity_id: fan.air_purifier
       data:
-        speed: Auto
+        preset_mode: Auto
 ap_detect:
   sequence:
     - service: xiaomi_miio.fan_set_favorite_level
@@ -13,7 +13,7 @@ ap_detect:
     - service: fan.set_preset_mode
       entity_id: fan.air_purifier
       data:
-        speed: Favorite
+        preset_mode: Favorite
 ap_medium:
   sequence:
     - service: xiaomi_miio.fan_set_favorite_level
@@ -23,7 +23,7 @@ ap_medium:
     - service: fan.set_preset_mode
       entity_id: fan.air_purifier
       data:
-        speed: Favorite
+        preset_mode: Favorite
 ap_max:
   sequence:
     - service: xiaomi_miio.fan_set_favorite_level
@@ -33,7 +33,7 @@ ap_max:
     - service: fan.set_preset_mode
       entity_id: fan.air_purifier
       data:
-        speed: Favorite
+        preset_mode: Favorite
 
 ac_off:
   sequence:
