@@ -1,6 +1,6 @@
 ap_auto:
   sequence:
-    - service: fan.set_speed
+    - service: fan.set_preset_mode
       entity_id: fan.air_purifier
       data:
         speed: Auto
@@ -10,7 +10,7 @@ ap_detect:
       entity_id: fan.air_purifier
       data_template:
         level: "{{ [[(states('sensor.aqi') | int / 2) | int, 1] | max, 14] | min }}"
-    - service: fan.set_speed
+    - service: fan.set_preset_mode
       entity_id: fan.air_purifier
       data:
         speed: Favorite
@@ -20,7 +20,7 @@ ap_medium:
       entity_id: fan.air_purifier
       data:
         level: 7
-    - service: fan.set_speed
+    - service: fan.set_preset_mode
       entity_id: fan.air_purifier
       data:
         speed: Favorite
@@ -30,7 +30,7 @@ ap_max:
       entity_id: fan.air_purifier
       data:
         level: 14
-    - service: fan.set_speed
+    - service: fan.set_preset_mode
       entity_id: fan.air_purifier
       data:
         speed: Favorite

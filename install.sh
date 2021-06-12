@@ -1,9 +1,19 @@
 sudo apt-get update
 sudo apt-get upgrade -y
-sudo apt-get install python3 python3-dev python3-venv python3-pip libffi-dev libssl-dev autossh
+sudo apt-get install -y python3 python3-dev python3-venv python3-pip libffi-dev libssl-dev libjpeg-dev zlib1g-dev autoconf build-essential libopenjp2-7 libtiff5 tzdata autossh
+# Install Python 3.8.
+sudo apt-get install -y libncursesw5-dev libreadline-gplv2-dev libgdbm-dev libc6-dev libsqlite3-dev libbz2-dev libffi-dev
+wget https://www.python.org/ftp/python/3.8.10/Python-3.8.10.tgz
+tar zxf Python-3.8.10.tgz
+rm -f Python-3.8.10.tgz
+cd Python-3.8.10
+./configure --enable-optimizations
+make -j 4
+sudo make altinstall
+# Create venv with homeassistant.
 sudo mkdir /srv/homeassistant
 sudo chown pi:pi /srv/homeassistant
-python3 -m venv /srv/homeassistant
+python3.8 -m venv /srv/homeassistant
 /srv/homeassistant/bin/python3 -m pip install wheel homeassistant
 sudo sh -c "cat >/etc/systemd/system/home-assistant@pi.service" <<-EOF
 [Unit]

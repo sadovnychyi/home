@@ -17,9 +17,10 @@ homeassistant:
         - ::1
       allow_bypass_login: true
   customize: !include customize.yaml
+  external_url: https://home.dmit.ro
+  internal_url: http://home.local:8123
 
 http:
-  base_url: https://home.dmit.ro
   server_port: 8123
   cors_allowed_origins:
     - https://home.dmit.ro
