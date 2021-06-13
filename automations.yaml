@@ -10,6 +10,10 @@
       event_data:
         entity_id: binary_sensor.switch_158d000210a4fb
         click_type: single
+    - platform: event
+      event_type: ios.action_fired
+      event_data:
+        actionName: Toggle lights
   action:
     service: light.toggle
     entity_id: all

@@ -182,3 +182,14 @@ geo_location:
     feed_type: 'past_month_m25_earthquakes'
     radius: 150
     minimum_magnitude: 2.5
+
+ios:
+  actions:
+    - name: Toggle lights
+      background_color: "#000000"
+      label:
+        text: "Toggle lights"
+        color: "#ffffff"
+      icon:
+        icon: lightbulb
+        color: "#ffffff"
