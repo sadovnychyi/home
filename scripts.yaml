@@ -1,10 +1,14 @@
 ap_auto:
+  alias: Air Purifier Auto
+  icon: mdi:air-purifier
   sequence:
     - service: fan.set_preset_mode
       entity_id: fan.air_purifier
       data:
         preset_mode: Auto
 ap_medium:
+  alias: Air Purifier Medium
+  icon: mdi:air-purifier
   sequence:
     - service: xiaomi_miio.fan_set_favorite_level
       entity_id: fan.air_purifier
@@ -15,6 +19,8 @@ ap_medium:
       data:
         preset_mode: Favorite
 ap_max:
+  alias: Air Purifier Max
+  icon: mdi:air-purifier
   sequence:
     - service: xiaomi_miio.fan_set_favorite_level
       entity_id: fan.air_purifier
@@ -26,6 +32,8 @@ ap_max:
         preset_mode: Favorite
 
 tv_power:
+  alias: TV power
+  icon: mdi:power
   sequence:
     - service: remote.send_command
       entity_id: 'remote.remote'
@@ -33,6 +41,8 @@ tv_power:
         command:
           - 'tv_power'
 tv_input:
+  alias: TV input
+  icon: mdi:video-input-hdmi
   sequence:
     - service: remote.send_command
       entity_id: 'remote.remote'
@@ -40,6 +50,8 @@ tv_input:
         command:
           - 'tv_input'
 tv_volume_up:
+  alias: TV volume up
+  icon: mdi:volume-plus
   sequence:
     - service: remote.send_command
       entity_id: 'remote.remote'
@@ -47,6 +59,8 @@ tv_volume_up:
         command:
           - 'tv_volume_up'
 tv_volume_down:
+  alias: TV volume down
+  icon: mdi:volume-minus
   sequence:
     - service: remote.send_command
       entity_id: 'remote.remote'
@@ -54,6 +68,8 @@ tv_volume_down:
         command:
           - 'tv_volume_down'
 tv_mute:
+  alias: TV mute
+  icon: mdi:volume-mute
   sequence:
     - service: remote.send_command
       entity_id: 'remote.remote'
@@ -61,6 +77,8 @@ tv_mute:
         command:
           - 'tv_mute'
 tv_channel_next:
+  alias: TV next channel
+  icon: mdi:skip-next-circle
   sequence:
     - service: remote.send_command
       entity_id: 'remote.remote'
@@ -68,6 +86,8 @@ tv_channel_next:
         command:
           - 'tv_channel_next'
 tv_channel_prev:
+  alias: TV previous channel
+  icon: mdi:skip-previous-circle
   sequence:
     - service: remote.send_command
       entity_id: 'remote.remote'
@@ -75,6 +95,8 @@ tv_channel_prev:
         command:
           - 'tv_channel_prev'
 tv_menu:
+  alias: TV menu
+  icon: mdi:menu
   sequence:
     - service: remote.send_command
       entity_id: 'remote.remote'
@@ -82,6 +104,8 @@ tv_menu:
         command:
           - 'tv_menu'
 tv_enter:
+  alias: TV enter
+  icon: mdi:location-enter
   sequence:
     - service: remote.send_command
       entity_id: 'remote.remote'
@@ -89,6 +113,8 @@ tv_enter:
         command:
           - 'tv_enter'
 tv_arrow_up:
+  alias: TV arrow up
+  icon: mdi:arrow-up-bold-circle
   sequence:
     - service: remote.send_command
       entity_id: 'remote.remote'
@@ -96,6 +122,8 @@ tv_arrow_up:
         command:
           - 'tv_arrow_up'
 tv_arrow_down:
+  alias: TV arrow down
+  icon: mdi:arrow-down-bold-circle
   sequence:
     - service: remote.send_command
       entity_id: 'remote.remote'
@@ -103,6 +131,8 @@ tv_arrow_down:
         command:
           - 'tv_arrow_down'
 tv_arrow_left:
+  alias: TV arrow left
+  icon: mdi:arrow-left-bold-circle
   sequence:
     - service: remote.send_command
       entity_id: 'remote.remote'
@@ -110,6 +140,8 @@ tv_arrow_left:
         command:
           - 'tv_arrow_left'
 tv_arrow_right:
+  alias: TV arrow right
+  icon: mdi:arrow-right-bold-circle
   sequence:
     - service: remote.send_command
       entity_id: 'remote.remote'
@@ -117,6 +149,8 @@ tv_arrow_right:
         command:
           - 'tv_arrow_right'
 tv_return:
+  alias: TV return
+  icon: mdi:location-exit
   sequence:
     - service: remote.send_command
       entity_id: 'remote.remote'
@@ -124,6 +158,8 @@ tv_return:
         command:
           - 'tv_return'
 tv_exit:
+  alias: TV exit
+  icon: mdi:exit-to-app
   sequence:
     - service: remote.send_command
       entity_id: 'remote.remote'
