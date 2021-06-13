@@ -188,11 +188,14 @@
     platform: state
     entity_id: binary_sensor.door_window_sensor_158d0002b6e9f4
     to: 'on'
+  condition:
+  - condition: state
+    entity_id: person.dmytro_sadovnychyi
+    state: away
   action:
-    # TODO: fix, add condition if away
-    - service: notify.notify_person
+    - service: notify.notify
       data:
-        message: 'The door has been opened'
+        message: 'Front door has been opened'
 
 - alias: 'Set theme at startup'
   trigger:
