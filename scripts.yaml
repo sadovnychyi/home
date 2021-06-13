@@ -43,6 +43,7 @@ tv_power:
 tv_input:
   alias: TV input
   icon: mdi:video-input-hdmi
+  mode: parallel
   sequence:
     - service: remote.send_command
       entity_id: 'remote.remote'
@@ -52,6 +53,7 @@ tv_input:
 tv_volume_up:
   alias: TV volume up
   icon: mdi:volume-plus
+  mode: parallel
   sequence:
     - service: remote.send_command
       entity_id: 'remote.remote'
@@ -61,6 +63,7 @@ tv_volume_up:
 tv_volume_down:
   alias: TV volume down
   icon: mdi:volume-minus
+  mode: parallel
   sequence:
     - service: remote.send_command
       entity_id: 'remote.remote'
@@ -79,6 +82,7 @@ tv_mute:
 tv_channel_next:
   alias: TV next channel
   icon: mdi:skip-next-circle
+  mode: parallel
   sequence:
     - service: remote.send_command
       entity_id: 'remote.remote'
@@ -88,6 +92,7 @@ tv_channel_next:
 tv_channel_prev:
   alias: TV previous channel
   icon: mdi:skip-previous-circle
+  mode: parallel
   sequence:
     - service: remote.send_command
       entity_id: 'remote.remote'
