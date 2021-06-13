@@ -40,5 +40,3 @@ sensor.illumination_34ce0088f666:
 switch.plug_158d0001640e49:
   friendly_name: Bathroom Vent
   icon: mdi:fan
-binary_sensor.updater:
-  hidden: true
