@@ -93,15 +93,6 @@ sensor:
         device_class: temperature
         friendly_name: Target Temperature
 
-discovery:
-  ignore:
-    - homekit
-    - yeelight
-
-# TODO: this is broken with last update
-# upnp:
-#   port_mapping: true
-
 yeelight:
   devices:
     192.168.1.53:

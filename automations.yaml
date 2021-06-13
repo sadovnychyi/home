@@ -52,7 +52,9 @@
     below: 500
   action:
     - service: light.turn_on
-      entity_id: group.night_lights
+      entity_id:
+        - light.gateway_light_34ce0088f666
+        - light.under_bed
       data:
         transition: 10
         brightness_pct: 100
@@ -67,7 +69,9 @@
       seconds: 30
   action:
     service: light.turn_off
-    entity_id: group.night_lights
+    entity_id:
+      - light.gateway_light_34ce0088f666
+      - light.under_bed
     data:
       transition: 90
 
@@ -82,7 +86,7 @@
       to: 'off'
   action:
     service: switch.turn_on
-    entity_id: group.bathroom_vent
+    entity_id: switch.plug_158d0001640e49
 
 - alias: Turn off bathroom vent
   trigger:
@@ -98,7 +102,7 @@
         minutes: 15
   action:
     - service: switch.turn_off
-      entity_id: group.bathroom_vent
+      entity_id: switch.plug_158d0001640e49
 
 - alias: Xiaomi Cube - Brightness [Rotate]
   trigger:
@@ -185,6 +189,7 @@
     entity_id: binary_sensor.door_window_sensor_158d0002b6e9f4
     to: 'on'
   action:
+    # TODO: fix, add condition if away
     - service: notify.notify_person
       data:
         message: 'The door has been opened'
