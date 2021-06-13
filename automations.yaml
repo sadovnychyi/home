@@ -38,10 +38,8 @@
         entity_id: binary_sensor.switch_158d0001839fab
         click_type: long_click_press
   action:
-    - service: script.ac_off
-    # TODO: set away mode
     - service: climate.turn_off
-      entity_id: climate.turn_off
+      entity_id: climate.thermostat
 
 - alias: Turn on night lights on motion
   trigger:
