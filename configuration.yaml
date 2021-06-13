@@ -87,13 +87,6 @@ sensor:
       target_temperature:
         value_template: "{{ state_attr('climate.thermostat', 'temperature') }}"
         friendly_name: Target Temperature
-  - platform: mold_indicator
-    indoor_temp_sensor: sensor.temperature
-    indoor_humidity_sensor: sensor.humidity
-    outdoor_temp_sensor: sensor.temperature_outside
-    # calibration_factor = (temp_indoor - temp_outdoor) / (temp_criticalpoint - temp_outdoor)
-    # where critical point is the coldest surface in the room
-    calibration_factor: 2.0
 
 discovery:
   ignore:
