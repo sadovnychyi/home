@@ -5,3 +5,6 @@ tts
 *.log
 *.db*
 *.DS_Store
+secrets_backup.yaml
+.vscode
+sadovnychyi-2453d143a173.json
