@@ -40,33 +40,5 @@ sensor.illumination_34ce0088f666:
 switch.plug_158d0001640e49:
   friendly_name: Bathroom Vent
   icon: mdi:fan
-sensor.tl_wr941hp_bytes_received:
-  friendly_name: Network bytes received
-  icon: mdi:server-network
-sensor.tl_wr941hp_bytes_sent:
-  friendly_name: Network bytes sent
-  icon: mdi:server-network
-sensor.tl_wr941hp_kbyte_sec_received:
-  friendly_name: Network kbyte/sec received
-  icon: mdi:server-network
-sensor.tl_wr941hp_kbyte_sec_sent:
-  friendly_name: Network kbyte/sec sent
-  icon: mdi:server-network
-sensor.tl_wr941hp_packets_received:
-  friendly_name: Network packets received
-  icon: mdi:server-network
-  hidden: true
-sensor.tl_wr941hp_packets_sec_received:
-  friendly_name: Network packets/sec received
-  icon: mdi:server-network
-  hidden: true
-sensor.tl_wr941hp_packets_sec_sent:
-  friendly_name: Network packets/sec sent
-  icon: mdi:server-network
-  hidden: true
-sensor.tl_wr941hp_packets_sent:
-  friendly_name: Network packets sent
-  icon: mdi:server-network
-  hidden: true
 binary_sensor.updater:
   hidden: true
