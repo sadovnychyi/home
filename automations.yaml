@@ -141,9 +141,10 @@
     entity_id: input_boolean.ac
     to: 'on'
   action:
-    service: script.turn_on
-    data_template:
-      entity_id: "script.ac_auto_{{ (state_attr('climate.thermostat', 'temperature'))|int }}"
+    - service: remote.send_command
+      entity_id: 'remote.remote'
+      data_template:
+        command: "ac_auto_{{ (state_attr('climate.thermostat', 'temperature'))|int }}"
 
 - alias: AC off
   trigger:
@@ -151,8 +152,11 @@
     entity_id: input_boolean.ac
     to: 'off'
   action:
-    service: script.turn_on
-    entity_id: script.ac_off
+    - service: remote.send_command
+      entity_id: 'remote.remote'
+      data:
+        command:
+          - 'ac_off'
 
 - alias: 'Sync thermostat with AC'
   trigger:
@@ -165,9 +169,10 @@
         entity_id: input_boolean.ac
         state: 'on'
   action:
-    service: script.turn_on
-    data_template:
-      entity_id: "script.ac_auto_{{ (state_attr('climate.thermostat', 'temperature'))|int }}"
+    - service: remote.send_command
+      entity_id: 'remote.remote'
+      data_template:
+        command: "ac_auto_{{ (state_attr('climate.thermostat', 'temperature'))|int }}"
 
 - alias: Notify when door is opened
   trigger:
