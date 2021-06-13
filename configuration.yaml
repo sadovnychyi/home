@@ -35,9 +35,6 @@ http:
 tts:
   - platform: google_translate
 
-frontend:
-  themes: !include_dir_named themes
-
 google_assistant:
   project_id: sadovnychyi
   service_account: !include sadovnychyi-2453d143a173.json

@@ -200,12 +200,3 @@
     - service: notify.notify
       data:
         message: 'Front door has been opened'
-
-- alias: 'Set theme at startup'
-  trigger:
-   - platform: homeassistant
-     event: start
-  action:
-    service: frontend.set_theme
-    data:
-      name: material_dark_red
