@@ -170,7 +170,7 @@ climate:
     ac_mode: true
     target_temp: 27
     away_temp: 30
-    cold_tolerance: 0.5
+    cold_tolerance: 1.5
     hot_tolerance: 0.5
     precision: 0.5
 
