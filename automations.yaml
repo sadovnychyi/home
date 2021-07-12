@@ -187,6 +187,40 @@
       data_template:
         command: "ac_auto_{{ (state_attr('climate.thermostat', 'temperature'))|int }}"
 
+- alias: 'Sync thermostat off temperature with AC'
+  trigger:
+    platform: state
+    entity_id: sensor.target_temperature
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.ac
+        state: 'off'
+  action:
+    - service: remote.send_command
+      entity_id: 'remote.remote'
+      data:
+        command:
+          - 'ac_off'
+
+- alias: 'Sync thermostat off with AC'
+  trigger:
+    platform: state
+    entity_id: climate.thermostat
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: climate.thermostat
+        state: 'off'
+  action:
+    - service: remote.send_command
+      entity_id: 'remote.remote'
+      data:
+        command:
+          - 'ac_off'
+
 - alias: Notify when door is opened
   trigger:
     platform: state
