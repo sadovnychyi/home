@@ -34,6 +34,7 @@ http:
 
 tts:
   - platform: google_translate
+    base_url: https://home.dmit.ro
 
 google_assistant:
   project_id: sadovnychyi

@@ -234,3 +234,45 @@
     - service: notify.notify
       data:
         message: 'Front door has been opened'
+
+- alias: Google Cloud Platform Alert
+  trigger:
+    - platform: webhook
+      webhook_id: !secret gcp_webhook
+  action:
+    - data:
+        volume_level: 1.0
+      entity_id: media_player.living_room_speaker
+      service: media_player.volume_set
+    - service: tts.google_translate_say
+      entity_id: media_player.living_room_speaker
+      data:
+        message: 'Warning: Google Cloud Platform Alert Triggered'
+    - service: light.turn_off
+      entity_id: all
+    - delay:
+        seconds: 1
+    - service: light.turn_on
+      entity_id: all
+      data:
+        color_name: red
+    - delay:
+        seconds: 1
+    - service: light.turn_off
+      entity_id: all
+    - delay:
+        seconds: 1
+    - service: light.turn_on
+      entity_id: all
+      data:
+        color_name: red
+    - delay:
+        seconds: 1
+    - service: light.turn_off
+      entity_id: all
+    - delay:
+        seconds: 1
+    - service: light.turn_on
+      entity_id: all
+      data:
+        color_temp: 200
