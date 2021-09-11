@@ -34,7 +34,7 @@ Description=AutoSSH tunnel service
 After=network.target
 [Service]
 Environment="AUTOSSH_GATETIME=0"
-ExecStart=/usr/bin/autossh -o "ServerAliveInterval 10" -o "ServerAliveCountMax 3" -N -R 8123:localhost:8123 dyriax_gmail_com@146.148.70.148 -i /home/pi/.ssh/id_rsa
+ExecStart=/usr/bin/autossh -o "ServerAliveInterval 10" -o "ServerAliveCountMax 3" -N -R 8123:localhost:8123 dyriax_gmail_com@home.dmit.ro -i /home/pi/.ssh/id_rsa
 Restart=on-failure
 RestartSec=5s
 [Install]
@@ -46,8 +46,8 @@ sudo systemctl enable autossh-tunnel
 sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8123
 # Generate SSH key to use on cloud VM.
 # ssh-keygen -t rsa -b 4096 -C "home@dmit.ro"
-# ssh -v -nN -R 8123:localhost:8123 dyriax_gmail_com@146.148.70.148
-# autossh -N -R 8123:localhost:8123 dyriax_gmail_com@146.148.70.148
+# ssh -v -nN -R 8123:localhost:8123 dyriax_gmail_com@home.dmit.ro
+# autossh -N -R 8123:localhost:8123 dyriax_gmail_com@home.dmit.ro
 # Install pi-hole, custom DNS server with filtering.
 git clone --depth 1 https://github.com/pi-hole/pi-hole.git Pi-hole
 sudo bash Pi-hole/automated\ install/basic-install.sh
