@@ -34,7 +34,7 @@ Description=AutoSSH tunnel service
 After=network.target
 [Service]
 Environment="AUTOSSH_GATETIME=0"
-ExecStart=/usr/bin/autossh -o "ServerAliveInterval 10" -o "ServerAliveCountMax 3" -N -R 8123:localhost:8123 dyriax_gmail_com@home.dmit.ro -i /home/pi/.ssh/id_rsa
+ExecStart=/usr/bin/autossh -o "ServerAliveInterval 10" -o "ServerAliveCountMax 3" -o StrictHostKeyChecking=no -N -R 8123:localhost:8123 dyriax_gmail_com@home.dmit.ro -i /home/pi/.ssh/id_rsa
 Restart=on-failure
 RestartSec=5s
 [Install]
