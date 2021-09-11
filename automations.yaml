@@ -142,7 +142,7 @@
     - service: xiaomi_miio.fan_set_favorite_level
       entity_id: fan.air_purifier_2
       data_template:
-        level: "{{ [[(states('sensor.aqi') | int / 2) | int, 7] | max, 14] | min }}"
+        level: "{{ [[(states('sensor.aqi') | int / 2) | int, 3] | max, 14] | min }}"
     - service: fan.set_preset_mode
       entity_id: fan.air_purifier_2
       data:
