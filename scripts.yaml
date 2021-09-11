@@ -3,7 +3,7 @@ ap_auto:
   icon: mdi:air-purifier
   sequence:
     - service: fan.set_preset_mode
-      entity_id: fan.air_purifier
+      entity_id: fan.air_purifier_2
       data:
         preset_mode: Auto
 ap_medium:
@@ -11,11 +11,11 @@ ap_medium:
   icon: mdi:air-purifier
   sequence:
     - service: xiaomi_miio.fan_set_favorite_level
-      entity_id: fan.air_purifier
+      entity_id: fan.air_purifier_2
       data:
         level: 7
     - service: fan.set_preset_mode
-      entity_id: fan.air_purifier
+      entity_id: fan.air_purifier_2
       data:
         preset_mode: Favorite
 ap_max:
@@ -23,11 +23,11 @@ ap_max:
   icon: mdi:air-purifier
   sequence:
     - service: xiaomi_miio.fan_set_favorite_level
-      entity_id: fan.air_purifier
+      entity_id: fan.air_purifier_2
       data:
         level: 14
     - service: fan.set_preset_mode
-      entity_id: fan.air_purifier
+      entity_id: fan.air_purifier_2
       data:
         preset_mode: Favorite
 

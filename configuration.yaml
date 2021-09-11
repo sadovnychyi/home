@@ -70,7 +70,7 @@ sensor:
       temperature:
         friendly_name: "Temperature"
         unit_of_measurement: '°C'
-        value_template: "{{ state_attr('fan.air_purifier', 'temperature') }}"
+        value_template: "{{ state_attr('fan.air_purifier_2', 'temperature') }}"
         device_class: temperature
       humidity_outside:
         friendly_name: "Humidity Outside"
@@ -80,12 +80,12 @@ sensor:
       humidity:
         friendly_name: "Humidity"
         unit_of_measurement: '%'
-        value_template: "{{ state_attr('fan.air_purifier', 'humidity') }}"
+        value_template: "{{ state_attr('fan.air_purifier_2', 'humidity') }}"
         device_class: humidity
       aqi:
         friendly_name: "AQI"
         unit_of_measurement: 'aqi'
-        value_template: "{{ state_attr('fan.air_purifier', 'aqi') }}"
+        value_template: "{{ state_attr('fan.air_purifier_2', 'aqi') }}"
       target_temperature:
         value_template: "{{ state_attr('climate.thermostat', 'temperature') }}"
         device_class: temperature
@@ -135,12 +135,12 @@ xiaomi_aqara:
   gateways:
     - key: !secret gateway_key
 
-fan:
-  - platform: xiaomi_miio
-    name: Air Purifier
-    host: 192.168.1.51
-    token: !secret purifier_key
-    model: zhimi.airpurifier.ma2
+# fan:
+#   - platform: xiaomi_miio
+#     name: Air Purifier
+#     host: 192.168.1.51
+#     token: !secret purifier_key
+#     model: zhimi.airpurifier.ma2
 
 remote:
   - platform: xiaomi_miio
